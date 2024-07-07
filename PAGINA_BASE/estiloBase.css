@@ -63,5 +63,22 @@ main{
 
 footer{
     grid-area: f;
+    position: relative;
+}
+
+.contacto{
     position: absolute;
+    bottom: 20px;
+    right: 30px;
+    background-color: #FDE14A;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contacto h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
 }
