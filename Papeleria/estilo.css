@@ -87,8 +87,8 @@ main h3{
 
 main img{
    
-    width: 200px; 
-    height: 200px; 
+    width: 150px; 
+    height: 150px; 
     margin-top: 5px;
     margin-left: 40px;
     margin-right: 40px;
@@ -117,7 +117,6 @@ main img:hover{
     text-align: center;
 }
 
-
 .luna {
     position: absolute;
     bottom: 0;
@@ -131,3 +130,4 @@ main img:hover{
     height: 100%;
     object-fit: cover;
 }
+
