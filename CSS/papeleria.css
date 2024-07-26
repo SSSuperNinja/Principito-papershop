@@ -1,6 +1,6 @@
 @font-face {
     font-family: Just;
-    src: url("fuente/JustMeAgainDownHere-Regular.ttf");
+    src: url("../fuentes/JustMeAgainDownHere-Regular.ttf");
 }
 
 *{
@@ -78,7 +78,7 @@ main{
     align-items: center;
     flex-wrap: wrap;
 }
-main h3{
+main{
     margin-top: 10px;
     text-align: center;
     font-family: just;
@@ -87,8 +87,8 @@ main h3{
 
 main img{
    
-    width: 200px; 
-    height: 200px; 
+    width: 150px; 
+    height: 150px; 
     margin-top: 5px;
     margin-left: 40px;
     margin-right: 40px;
@@ -106,7 +106,7 @@ main img:hover{
     text-align: end;
 }
 
-.elementof{
+.elementof .contacto{
     position: absolute;
     bottom: 20px;
     right: 30px;
@@ -115,8 +115,8 @@ main img:hover{
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
+    font-size: 1.5rem;
 }
-
 
 .luna {
     position: absolute;
@@ -131,3 +131,4 @@ main img:hover{
     height: 100%;
     object-fit: cover;
 }
+
