@@ -1,0 +1,41 @@
+.formulario-div{
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    
+}
+
+.formulario-div form{
+    width: 400px;
+    min-height: 60vh;
+    background-color: #f4f4e1;
+    border: 5px solid white;
+    padding: 3%;
+    font-family: "Monserrat Alternates", serif;
+    font-size: 2rem;
+    box-shadow: 0 4px 4px ra(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+input[type=text], input[type=password], input[type=number],input[type=file],
+textarea,select{
+    font-family: "Montserrat Alternates", serif;
+    font-size: 2rem;
+    margin:0.5rem 0 0.5rem 0;
+}
+
+label{
+    color: #774f38;
+
+}
+
+.formulario-div h3{
+    text-align: center;
+    color: #42929d;
+    text-transform: uppercase;
+    border-bottom: 1px solid #42929d;
+}

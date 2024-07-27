@@ -1,0 +1,30 @@
+
+<?php
+    include('items/encabezado.php');
+?>
+        <div class="container">
+            <div class="item">
+                <a href="fiesta.php">
+                <img src="../Imagenes/fiesta.jpg" class="fiesta" alt="Artículos de fiesta">
+                <p>Artículos de fiesta</p>
+            </div>
+            <div class="item">
+                <a href="libretas.php">
+                <img src="../Imagenes/libretas.jpg" class="libretas" alt="Libretas">
+                <p>Libretas</p>
+            </div>
+            <div class="item">
+                <a href="papeleria.php">
+                <img src="../Imagenes/papeleria.jpg" class="papeleria" alt="Papelería">
+                <p>Papelería</p>
+            </div>
+            <div class="item">
+                <a href="utiles.php">
+                <img src="../Imagenes/utiles.jpg" class="utiles" alt="Útiles Escolares">
+                <p>Útiles Escolares</p>
+            </div>
+        </div>
+
+<?php
+    include('items/pie.php');
+?>
