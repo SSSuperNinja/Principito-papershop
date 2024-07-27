@@ -27,7 +27,7 @@
         </div>
         <div class="buttons">
             <button class="cancel">Cancelar</button>
-            <button class="proceed">Proceder al pago</button>
+            <a href="compra.php"><button class="proceed">Proceder al pago</button></a>
         </div>
     </div>
 </body>

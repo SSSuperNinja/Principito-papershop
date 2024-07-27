@@ -3,12 +3,12 @@
 ?>
 
     <div class="formulario-div">
-        <form action="agregar-manejo.php" method="post" enctype="multipart/form-data">
+        <form action="agregar-BDD.php" method="post" enctype="multipart/form-data">
 
             <h3>Numevo Producto</h3>
         
             <label for="Producto">Producto</label>
-            <input type="text" id="Producto" name="Producto" required>
+            <input type="text" id="producto" name="producto" required>
     
             <label for="tipo">Tipo</label>
             <select name="tipo" id="tipo">

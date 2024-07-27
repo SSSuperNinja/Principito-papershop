@@ -49,9 +49,28 @@ header h1 {
     font-size: 4rem;
 }
 
+.login{
+    display: flex;
+    margin-right: none;
+    margin-top: 3.5rem;
+    text-decoration: none;
+}
+
+.login a {
+    color: #FDE14A;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 10px 20px;
+    margin-right: 20px; 
+}
+
+.login a:last-child {
+    margin-right: 0; 
+}
+
 .carrito img{
     width: 50px;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     margin-right: 2rem;
 }
 
@@ -199,3 +218,8 @@ a.boton{
     object-fit: cover;
 }
 /*------------------------------*/
+
+
+
+
+

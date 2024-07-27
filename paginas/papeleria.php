@@ -1,49 +1,41 @@
 <?php
     include('items/encabezado.php');
+    include('items/utilerias.php');
 ?>
-        
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/cartulina.jpeg" alt="">
-                <h3 class="nombre">Cartulinas</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
+<div class="verproducto">
 
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/fomi.jpeg" alt="">
-                <h3 class="nombre">Fomi</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/carpetas.jpeg" alt="">
-                <h3 class="nombre">carpetas</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/casca.jpeg" alt="">
-                <h3 class="nombre">papel cascaron</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/pin.jpeg" alt="">
-                <h3 class="nombre">Pintura Acrilica</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
-        
+<?php
+    $conexion=conectar();
+    ver_productos('papeleria',$conexion);
+    mysqli_close($conexion);
+?>  
+<?php
+    function ver_productos($producto,$conexion){
+        echo "<div class='contenedor'>";
+    
+    
+        $sql="select * from producto where tipo='$producto'";
+        $resultado=mysqli_query($conexion,$sql);
+    
+        if(mysqli_num_rows($resultado)>0){
+            while($renglon=mysqli_fetch_assoc($resultado)){
+                    $postre=$renglon['producto'];
+                    $precio=$renglon['precio'];
+                    $imagen=$renglon['imagen'];
+                    echo 
+                    "<div class='producto-tarjeta'>
+                        <h2 class='nombre'>$producto</h2>
+                        <h3 class='precio'>$precio</h3>
+                        <img src='$imagen' alt='' class='imagen'>
+                        <button class='boton max'>Agregar al Carrito</button>
+                    </div>";
+            }
+        }  
+        echo "</div>";
+    }
+?>
+</div>
+
 <?php
     include('items/pie.php');
 ?>

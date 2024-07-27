@@ -1,42 +1,40 @@
 <?php
     include('items/encabezado.php');
+    include('items/utilerias.php');
 ?>
-
-        <div class='contenedor'>  
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/bolsa_mujer.jpg" alt="bolsa mujer">
-                <h3>Bolsa regalo Mujer</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
-         
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/bolsa_hombre.jpg" alt="Bolsa hombre">
-                <h3>Bolsa regalo Hombre</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
+<div class="verproducto">
+    
+    <?php
+        $conexion=conectar();
+        ver_productos('fiesta',$conexion);
+        mysqli_close($conexion);
+    ?>  
+    <?php
+        function ver_productos($producto,$conexion){
+            echo "<div class='contenedor'>";
         
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/globos.jpg" alt="globos">
-                <h3>Globos Decorativos</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
         
-        <div class='contenedor'>
-            <div class="elemento">
-                <h1 class="precio">precio</h1>
-                <img src="../Imagenes/decoraciones.jpg" alt="">
-                <h3>Decoraciones</h3>
-                <button class="boton">Agregar al carrito</button>
-            </div>
-        </div>
+            $sql="select * from producto where tipo='$producto'";
+            $resultado=mysqli_query($conexion,$sql);
+        
+            if(mysqli_num_rows($resultado)>0){
+                while($renglon=mysqli_fetch_assoc($resultado)){
+                        $postre=$renglon['producto'];
+                        $precio=$renglon['precio'];
+                        $imagen=$renglon['imagen'];
+                        echo 
+                        "<div class='producto-tarjeta'>
+                            <h2 class='nombre'>$producto</h2>
+                            <h3 class='precio'>$precio</h3>
+                            <img src='$imagen' alt='' class='imagen'>
+                            <button class='boton max'>Agregar al Carrito</button>
+                        </div>";
+                }
+            }  
+            echo "</div>";
+        }
+?>
+</div>
     
 <?php
     include('items/pie.php');

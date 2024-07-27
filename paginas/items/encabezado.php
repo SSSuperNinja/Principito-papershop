@@ -1,3 +1,10 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,6 +26,20 @@
         <div class="titulo">
             <h1>PAPELERIA PRINCIPITO</h1>
         </div>
+
+        <div class="login">
+        <?php
+            if(isset($_SESSION['usuario'])){
+                echo "<a href='salir.php'>Salir</a>";
+                echo "<a href='agregar.php'>Agregar Producto</a>";
+            } else {
+                echo "<a href='sesionini.php'>Entrar</a>";
+            }
+        ?>
+</div>
+</div>
+</div>
+
         <div class="carrito">
             <img src="../Imagenes/carrito.png" alt="carrito">
         </div>
