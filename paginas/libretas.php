@@ -18,7 +18,7 @@
     
         if(mysqli_num_rows($resultado)>0){
             while($renglon=mysqli_fetch_assoc($resultado)){
-                    $postre=$renglon['producto'];
+                    $producto=$renglon['producto'];
                     $precio=$renglon['precio'];
                     $imagen=$renglon['imagen'];
                     echo 
