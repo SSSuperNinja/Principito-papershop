@@ -3,36 +3,14 @@
     include('items/utilerias.php')
 ?>
 
-<?php
-    $conexion=conectar();
-    ver_productos('libretas',$conexion);
-    mysqli_close($conexion);
-?>  
-<?php
-    function ver_productos($producto,$conexion){
-        echo "<div class='contenedor'>";
+<div class="verproducto">
     
-    
-        $sql="select * from producto where tipo='$producto'";
-        $resultado=mysqli_query($conexion,$sql);
-    
-        if(mysqli_num_rows($resultado)>0){
-            while($renglon=mysqli_fetch_assoc($resultado)){
-                    $producto=$renglon['producto'];
-                    $precio=$renglon['precio'];
-                    $imagen=$renglon['imagen'];
-                    echo 
-                    "<div class='producto-tarjeta'>
-                        <h2 class='nombre'>$producto</h2>
-                        <h3 class='precio'>$precio</h3>
-                        <img src='$imagen' alt='' class='imagen'>
-                        <button class='boton max'>Agregar al Carrito</button>
-                    </div>";
-            }
-        }  
-        echo "</div>";
-    }
-?>
+    <?php
+        $conexion=conectar();
+        ver_productos('libretas',$conexion);
+        mysqli_close($conexion);
+    ?>  
+
 </div>
 
 

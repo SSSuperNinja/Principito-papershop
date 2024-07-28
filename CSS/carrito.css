@@ -1,13 +1,27 @@
-@font-face{
+@font-face {
     font-family: "jura";
     src: url("../fuentes/JustMeAgainDownHere-Regular.ttf");
 }
-*{
-    font-family: "jura", sans-serif;
-    font-size: 1.5rem;
+
+.menu-principal .volver{
+    background: #a1d6fa;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-family: "jura", serif;
+    font-weight: bolder;
+    transition: background 0.5s;
+    cursor: pointer;
 }
 
-body {
+.carrito-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 12;
     background-color: #a1d6fa;
     font-family: Arial, sans-serif;
     display: flex;
@@ -15,63 +29,111 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    visibility: hidden;
 }
-.container {
+
+.carrito-ventana {
     width: 600px;
     background-color: #2c4564;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+
 }
-.item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+
+.carrito-ventana .carrito-titulo {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "jura", sans-serif;
+}
+
+.carrito-ventana .carrito-contenido,
+.carrito-ventana .total {
+    color: white;
+    font-family: "jura", sans-serif;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.carrito-ventana .total {
+    border-bottom: none;
+    border-top: 1px solid white;
+}
+
+p .precio {
+    text-align: right;
+    padding-left: 100%;
+}
+
+.renglon .precio {
+    text-align: right;
+
+}
+
+.total .precio-total {
+    text-align: center;
+    padding-left: 100%;
+}
+
+.renglon .cantidad {
+    text-align: center;
+    padding-left: 35%;
+}
+
+.producto .renglon {
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
     margin-bottom: 10px;
 }
-.item img {
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
+
+.renglon .precio .total .precio-total {
+    text-align: right;
 }
-.item span {
-    margin-left: 10px;
-    flex-grow: 1;
-    color: #000;
+
+.carrito-contenido .precio {
+    text-align: center;
 }
-.remove {
-    background: none;
+
+.boton-pagar {
+    padding: 10px 10px 10px 10px;
+    font-family: fantasy;
+    font-size: 2rem;
+    transition: background 0.5s;
+    border-radius: 20px;
+}
+
+.boton-quitar {
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+}
+
+.carrito-ventana .renglon .boton-quitar {
+    color: black;
+    background: #FDE14A;
     border: none;
-    color: #ff0000;
     cursor: pointer;
-    font-size: 1rem;
+    transition: background 0.5s;
+    margin-left: 5px;
 }
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+
+.carrito-ventana .renglon .boton-quitar:hover {
+    background: red;
+    color: black;
 }
-.buttons button {
-    width: 40%;
-    height: 20%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 700;
+
+.carrito-ventana .boton-pagar {
+    width: 100%;
+    background: #FDE14A;
 }
-.cancel {
-    background-color: #ff0000;
-    color: #fff;
-}
-.proceed {
-    background-color: #ffd700;
-    color: #000;
-}
-span{
-    font-size: 1rem;
+
+.carrito-ventana .boton-pagar:hover {
+    background: green;
+    color: black;
 }

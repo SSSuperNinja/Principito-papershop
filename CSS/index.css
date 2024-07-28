@@ -3,7 +3,7 @@
     src: url("../fuentes/JustMeAgainDownHere-Regular.ttf");
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -13,15 +13,15 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
-    background-color: #A6E3E9;
+    background-color: #a6e3e9;
     display: grid;
     height: 100vh;
     grid-template: auto 1fr auto / auto 1fr auto;
-    
 }
+
 /**************************encabezado****------------------------*/
-header{
-    background: #28527A;
+header {
+    background: #28527a;
     grid-column: 1/4;
     grid-row: 1/2;
     display: flex;
@@ -29,18 +29,17 @@ header{
     flex-direction: row;
 }
 
-img{
+img {
     cursor: pointer;
 }
 
-.logo img{
+.logo img {
     width: 8rem;
     margin-left: 3rem;
-    
 }
 
 header h1 {
-    color: #FDE14A;
+    color: #fde14a;
     margin: 0;
     font-size: 2.5em;
     display: flex;
@@ -49,99 +48,116 @@ header h1 {
     font-size: 4rem;
 }
 
-.login{
+.login {
     display: flex;
     margin-right: none;
-    margin-top: 3.5rem;
+    margin-top: 1.8rem;
     text-decoration: none;
 }
 
 .login a {
-    color: #FDE14A;
+    color: #fde14a;
     text-decoration: none;
-    font-size: 2rem;
+    font-family: Just;
+    font-size: 2.8rem;
     padding: 10px 20px;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .login a:last-child {
-    margin-right: 0; 
+    margin-right: 0;
 }
 
-.carrito img{
-    width: 50px;
+.carrito-boton {
+    width: 3.5rem;
+    height: 3.5rem;
     margin-top: 2.5rem;
     margin-right: 2rem;
+    position: relative;
+    right: 2rem;
+    cursor: pointer;
 }
 
+
 .saturno {
-    width: 25%;
+    width: 40%;
     position: fixed;
-    top: 8%;
+    top: 0%;
     right: 0;
     z-index: -1;
 }
-  
+
 .saturno img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-/*--------------------------------------------------*/
 
-main{
+/*-------------------cs de  index-------------------------------*/
+main {
     grid-column: 2/4;
-    display: flex; 
-    flex-direction: row; 
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.contenedor{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,350px);
-    justify-content: space-around;
-    row-gap: 30px;
-    margin: 10px;
+/*------------cs para ver los producto tarjetas --------------------*/
+/*fiesta - utiles- libreria- papeleria*/
+.contenedor-t {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
-.elemento{
+.producto-tarjeta {
     background: #ece5ce;
     border: 5px solid white;
     padding: 10px;
     transition: box-shadow 0.5s;
-}
-
-
-main h3{
-    margin-top: 10px;
+    width: 250px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-family: just;
-    font-size: 1.5rem;
 }
 
-main img{
-   
-    width: 150px; 
-    height: 150px; 
-    margin-top: 5px;
-    margin-left: 45px;
-    margin-right: 45px;
-    border-radius: 55px;
-}
-main img:hover{
-    border: 5px solid gray;
-   
+.producto-tarjeta:hover {
+    box-shadow: 0 5px 10px gray;
 }
 
+.producto-tarjeta .nombre {
+    font-family: "Patua One", serif;
+    color: #42929d;
+}
+
+.producto-tarjeta .precio {
+    font-family: "Patua One", serif;
+}
+
+.producto-tarjeta .imagen {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.producto-tarjeta .nombre,
+.producto-tarjeta .precio,
+.producto-tarjeta .imagen {
+    margin-bottom: 1rem;
+}
+
+/*----------------------------------------------------------*/
 /*-----------botones------------*/
 .boton {
-    background: #E08E79;
+    background: #e08e79;
     font-family: "Montserrat Alternates", serif;
     font-size: 1.2rem;
     color: white;
-    display: block;    
+    display: block;
     padding: 16px 0 16px 0;
     border: none;
     cursor: pointer;
@@ -150,9 +166,10 @@ main img:hover{
 }
 
 .boton:hover {
-    background: #42929D;
+    background: #42929d;
 }
-a.boton{
+
+a.boton {
     text-decoration: none;
     text-align: center;
 }
@@ -174,6 +191,14 @@ a.boton{
     border-radius: 15%;
     width: 150px;
     height: 300px;
+    margin-top: 5px;
+    margin-left: 45px;
+    margin-right: 45px;
+    border-radius: 55px;
+}
+
+.item img:hover {
+    border: 5px solid gray;
 }
 
 .item p {
@@ -181,26 +206,28 @@ a.boton{
     font-size: 1.2em;
     font-weight: bold;
 }
+
 /*---------Fin index----------------*/
 
 /*-----piepagina---------------------------------*/
-.componentef{
+.componentef {
     grid-column: 3/4;
     background: green;
-    margin: 10px;;
+    margin: 10px;
     text-align: end;
 }
 
-.componentef .contacto{
+.componentef .contacto {
     position: fixed;
     bottom: 20px;
     right: 30px;
-    background-color: #FDE14A;
+    background-color: #fde14a;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
     font-size: 1.5rem;
+    text-decoration: none;
 }
 
 .luna {
@@ -210,16 +237,11 @@ a.boton{
     left: 0;
     z-index: -1;
 }
-  
 
 .luna img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 /*------------------------------*/
-
-
-
-
-

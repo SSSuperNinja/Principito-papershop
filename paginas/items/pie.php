@@ -1,7 +1,7 @@
 </main>
     <footer class="componentef">
         <div class="elementof">
-            <a class="contacto">CONTACTO</a>
+            <a class="contacto" href="#">DIRECCION</a>
         </div>
     
     </footer>
@@ -12,5 +12,6 @@
     <div class="luna">
             <img src="../Imagenes/luna.png" alt="luna">
     </div>
+    <script src="../scripts/direccion.js"></script>
 </body>
 </html>

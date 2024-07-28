@@ -2,6 +2,8 @@
 <?php
     include('items/encabezado.php');
 ?>
+
+<div class="main">
         <div class="container">
             <div class="item">
                 <a href="fiesta.php">
@@ -28,6 +30,7 @@
                 <p>Útiles Escolares</p>
             </div>
         </div>
+</div>
 
 <?php
     include('items/pie.php');
