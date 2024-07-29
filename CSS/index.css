@@ -113,8 +113,8 @@ main {
 }
 
 .producto-tarjeta {
-    background: #ece5ce;
-    border: 5px solid white;
+    background:  #42929d;;
+    border: 5px solid #42929d;
     padding: 10px;
     transition: box-shadow 0.5s;
     width: 250px;
@@ -131,7 +131,7 @@ main {
 
 .producto-tarjeta .nombre {
     font-family: "Patua One", serif;
-    color: #42929d;
+    color: white;
 }
 
 .producto-tarjeta .precio {
@@ -153,7 +153,7 @@ main {
 /*----------------------------------------------------------*/
 /*-----------botones------------*/
 .boton {
-    background: #e08e79;
+    background: lightskyblue;
     font-family: "Montserrat Alternates", serif;
     font-size: 1.2rem;
     color: white;
@@ -166,7 +166,7 @@ main {
 }
 
 .boton:hover {
-    background: #42929d;
+    background: #3fc0d1;
 }
 
 a.boton {

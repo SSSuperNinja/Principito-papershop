@@ -9,8 +9,8 @@
 .formulario-div form{
     width: 400px;
     min-height: 60vh;
-    background-color: #f4f4e1;
-    border: 5px solid white;
+    background-color:   #2c4564;
+    border: 5px solid #42929d;
     padding: 3%;
     font-family: "Monserrat Alternates", serif;
     font-size: 2rem;
@@ -29,13 +29,13 @@ textarea,select{
 }
 
 label{
-    color: #774f38;
+    color: #fde14a;
 
 }
 
 .formulario-div h3{
     text-align: center;
-    color: #42929d;
+    color: #fde14a;
     text-transform: uppercase;
     border-bottom: 1px solid #42929d;
 }

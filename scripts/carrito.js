@@ -30,7 +30,22 @@ Array.from(botonesQuitar).forEach((boton) => {
     boton.addEventListener("click", removerProducto);
 });
 
+function obtenerProductosDelCarrito() {
+    const productos = localStorage.getItem('carrito');
+    return productos ? JSON.parse(productos) : [];
+}
+
+function guardarProductosEnCarrito(productos) {
+    localStorage.setItem('carrito', JSON.stringify(productos));
+}
+
 function removerProducto(evento){
+    const productos = obtenerProductosDelCarrito();
+    const indice = productos.findIndex((producto) => producto.nombre === evento.target.parentElement.querySelector('.nombre').innerHTML);
+    if (indice !== -1) {
+        productos.splice(indice, 1);
+        guardarProductosEnCarrito(productos);
+    }
     evento.target.parentElement.remove();
     actualizarTotal();
 }
@@ -48,7 +63,7 @@ function actualizarTotal(){
 
 actualizarTotal();
 
-/////////////////////////Botones Agregar Postre//////////////
+/////////////////////////Botones Agregar Producto//////////////
 const botonesAgregar = document.querySelectorAll('.producto-tarjeta .boton');
 Array.from(botonesAgregar).forEach((boton)=>{
     boton.addEventListener('click', evento=>{
@@ -60,7 +75,10 @@ Array.from(botonesAgregar).forEach((boton)=>{
 });
 
 function agregarAlCarrito(nombre, precio){
-    const productos = document.querySelector('.producto');
+    const productos = obtenerProductosDelCarrito();
+    productos.push({ nombre, precio });
+    guardarProductosEnCarrito(productos);
+    const productosElement = document.querySelector('.producto');
     let renglon = document.createElement('div');
 
     renglon.classList.add('renglon');
@@ -69,10 +87,30 @@ function agregarAlCarrito(nombre, precio){
     <p class="precio">$${precio}</p>
     <button class="boton-quitar">Remover</button>`;
 
-const boton = renglon.querySelector('.boton-quitar');
-boton.addEventListener('click', removerProducto);
+    const boton = renglon.querySelector('.boton-quitar');
+    boton.addEventListener('click', removerProducto);
 
-
-    productos.append(renglon);
+    productosElement.appendChild(renglon); 
+    setTimeout(actualizarTotal, 0); 
     alert('Producto agregado al carrito!!.');
 }
+
+function actualizarCarrito() {
+    const productos = obtenerProductosDelCarrito();
+    const productosElement = document.querySelector('.producto');
+    productosElement.innerHTML = '';
+    productos.forEach((producto) => {
+        let renglon = document.createElement('div');
+        renglon.classList.add('renglon');
+        renglon.innerHTML = 
+        `<p class="nombre">${producto.nombre}</p>
+        <p class="precio">$${producto.precio}</p>
+        <button class="boton-quitar">Remover</button>`;
+        const boton = renglon.querySelector('.boton-quitar');
+        boton.addEventListener('click', removerProducto);
+        productosElement.appendChild(renglon);
+    });
+    actualizarTotal();
+}
+
+document.addEventListener('DOMContentLoaded', actualizarCarrito);

@@ -45,32 +45,23 @@ if (session_status() == PHP_SESSION_NONE) {
                 <p class="carrito-titulo">Carrito</p>
                 <div class="carrito-contenido">
                     <p class="columna-producto">Producto</p>
-                    <p class="columna-cantidad">Cantidad</p>
+                    
                     <p class="columna-precio">Precio</p>
                 </div>
 
                 <div class="producto">
                     <div class="renglon">
-                        <p class="nombre">Libreta italiana</p>
-                        <p class="precio">$30.00</p>
-                        <button class="boton-quitar">Remover</button>
                     </div>
 
                     <div class="renglon">
-                        <p class="nombre">Libreta Escolar</p>
-                        <p class="precio">$20.00</p>
-                        <button class="boton-quitar">Remover</button>
                     </div>
 
                     <div class="renglon">
-                        <p class="nombre">Libreta de dibujo</p>
-                        <p class="precio">$50.00</p>
-                        <button class="boton-quitar">Remover</button>
                     </div>
                 </div>
                 <div class="total">
                     <p>Total</p>
-                    <p class="precio-total">$100.00</p>
+                    <p class="precio-total"></p>
                 </div>
                 <a href="compra.php">
                 <button class="boton-pagar">Pagar</button></a>

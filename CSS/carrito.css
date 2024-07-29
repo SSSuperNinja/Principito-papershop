@@ -116,7 +116,7 @@ p .precio {
 
 .carrito-ventana .renglon .boton-quitar {
     color: black;
-    background: #FDE14A;
+    background: #5490d8;
     border: none;
     cursor: pointer;
     transition: background 0.5s;
@@ -134,6 +134,6 @@ p .precio {
 }
 
 .carrito-ventana .boton-pagar:hover {
-    background: green;
+    background: #42929d;
     color: black;
 }

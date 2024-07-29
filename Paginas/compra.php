@@ -4,7 +4,7 @@
 
 <div class="formulario-div">
 
-    <form action="procesar_compra.php" method="post">
+    <form action="index.php" method="post">
         <h2>Formulario de Compra</h2>
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
@@ -27,6 +27,9 @@
         <button type="submit" class="boton">Realizar compra</button>
     </form>
 </div>
+
+<script src="../scripts/compra.js"></script>
+
 <?php
     include('items/pie.php');
 ?>
