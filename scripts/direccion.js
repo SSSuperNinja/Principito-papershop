@@ -9,3 +9,4 @@ contacto.addEventListener('click', (e) => {
 
   window.open(`https://www.google.com/maps/place/${lat},${lng}/@${lat},${lng},15z`, '_blank');
 });
+
