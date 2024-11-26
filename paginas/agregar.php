@@ -6,8 +6,8 @@
     <div class="formulario-div">
         <form action="agregar-BDD.php" method="post" enctype="multipart/form-data">
 
-            <h3>Numevo Producto</h3>
-        
+            <h3>Nuevo Producto</h3>
+            
             <label for="Producto">Producto</label>
             <input type="text" id="producto" name="producto" required>
     
