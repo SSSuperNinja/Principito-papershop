@@ -1,7 +1,8 @@
 <?php
     include('items/encabezado.php');
     include('items/utilerias.php');
-?>
+    include('estilos.php');
+    ?>
 <div class="verproducto">
 
 

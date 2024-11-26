@@ -1,5 +1,6 @@
 <?php
     include('items/encabezado.php');
+    include('estilos.php');
 ?>
 
 <div class="formulario-div">

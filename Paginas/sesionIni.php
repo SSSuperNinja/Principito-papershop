@@ -1,11 +1,14 @@
 <?php
-include('items/utilerias.php');
+    include('items/utilerias.php');
+
     session_start();
-    if(isset($_SESSION['usuario'])){
-        direccionar('la sesion ya esta iniciada','index.php');
+    if(isset($_SESSION['usuario'])){      
+        direccionar('La sesión ya está iniciada', 'index.php');
+        include('estilos.php');
         die();
     }
     include('items/encabezado.php');
+    include('estilos.php'); // Este ya incluye las configuraciones dinámicas
 ?>
      
 <div class="formulario-div">
@@ -22,8 +25,6 @@ include('items/utilerias.php');
     </form>
 </div>
 
-
 <?php
     include('items/pie.php');
 ?>
-     

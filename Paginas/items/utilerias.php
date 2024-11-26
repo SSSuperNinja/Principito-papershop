@@ -22,7 +22,7 @@
         define('SERVIDOR','localhost');
         define('USUARIO','root');
         define('PASSWORD','');
-        define('BD','principito');
+        define('BD','PaperEasy');
         $resultado=mysqli_connect(SERVIDOR,USUARIO,PASSWORD,BD);
         return $resultado;
     }
@@ -65,33 +65,28 @@
         }
     }
 /*--------------------agrega producto---------------------------------------------- */
-
-function ver_productos($producto,$conexion){
-        
+function ver_productos($categoria, $conexion) {
     echo "<div class='contenedor-t'>";
 
+    $sql = "SELECT p.nombre, p.precio, p.imagen_producto FROM producto p JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE c.nombre = '$categoria'";
+    $resultado = mysqli_query($conexion, $sql);
 
-    $sql="select * from producto where tipo='$producto'";
-    $resultado=mysqli_query($conexion,$sql);
-
-    if(mysqli_num_rows($resultado)>0){
-        while($renglon=mysqli_fetch_assoc($resultado)){
-                
-                $producto=$renglon['producto'];
-                $precio=$renglon['precio'];
-                $imagen=$renglon['imagen'];
-                echo 
-                "<div class='producto-tarjeta'>
-                    <h2 class='nombre'>$producto</h2>
-                    <h3 class='precio'>$precio</h3>
-                    <img src='$imagen' alt='' class='imagen'>
-                    <button class='boton max'>Agregar al Carrito</button>
-                </div>";
+    if (mysqli_num_rows($resultado) > 0) {
+        while ($renglon = mysqli_fetch_assoc($resultado)) {
+            $producto = $renglon['nombre'];
+            $precio = $renglon['precio'];
+            $imagen = $renglon['imagen_producto'];
+            echo 
+            "<div class='producto-tarjeta'>
+                <h2 class='nombre'>$producto</h2>
+                <h3 class='precio'>$precio</h3>
+                <img src='$imagen' alt='' class='imagen'>
+                <button class='boton max'>Agregar al Carrito</button>
+            </div>";
         }
     }  
     echo "</div>";
 }
-
 /*----------------------------------------------------------------------------------- */
 
 ?>
