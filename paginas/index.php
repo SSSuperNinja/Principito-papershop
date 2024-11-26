@@ -5,8 +5,8 @@ include('estilos.php'); // Cargar y aplicar los estilos
 // Si el formulario es enviado, manejar los cambios
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Actualizar los valores de font y bgColor
-    $config['font'] = $_POST['font'] ?? 'Arial';
-    $config['bgColor'] = $_POST['bgColor'] ?? '#ffffff';
+    $config['font'] = $_POST['font'] ?? $config['font'];
+    $config['bgColor'] = $_POST['bgColor'] ?? $config['bgColor'];
 
     // Actualizar el nombre de la papelería
     $config['header']['name'] = $_POST['headerName'] ?? $config['header']['name'];
@@ -54,8 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="main">
-    <!-- Botón de configuración -->
-    <button id="configButton" onclick="toggleModal()">Configuración</button>
+    <!-- Mostrar el botón de configuración solo si es administrador -->
+    <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === 'administrador'): ?>
+        <button id="configButton" onclick="toggleModal()">Configuración</button>
+    <?php endif; ?>
 
     <!-- Contenido dinámico del índice -->
     <div class="container">
